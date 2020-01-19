@@ -1,11 +1,9 @@
 ---
+title: Modules
 date: 2019-10-01
 draft: false
-title: Modules
 info: The real power behind terranix.
 ---
-
-# Modules
 
 The real power behind NixOS and terranix,
 is the module system which is fundamentally different to the

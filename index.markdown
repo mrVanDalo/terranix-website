@@ -1,5 +1,5 @@
 ---
-title: Tech Articles
+title: terranix.org
 ---
 
 # terranix

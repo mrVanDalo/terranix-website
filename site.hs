@@ -136,7 +136,7 @@ pandocCompilerWithToc =
        , writerTOCDepth = 3
        , writerTemplate =
            Just
-             "<nav id=\"TableOfContents\">$toc$</nav><div class=\"content\">$body$</div>"
+             "<nav id=\"TableOfContents\">$toc$</nav>$body$"
        })
 
 pandocCompilerWithoutToc =
@@ -146,7 +146,7 @@ pandocCompilerWithoutToc =
        { writerNumberSections = False
        , writerTableOfContents = False
        , writerTOCDepth = 3
-       , writerTemplate = Just "<div class=\"content\">$body$</div>"
+       , writerTemplate = Just "$body$"
        })
 
 createDefaultIndex :: String -> Context String

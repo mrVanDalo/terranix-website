@@ -5,8 +5,6 @@ draft: false
 info: A quick introduction on how to start.
 ---
 
-# Getting Started
-
 Let's have a quick overview on how you would use Terranix.
 
 If you search for working examples have a look at the

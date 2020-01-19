@@ -1,11 +1,9 @@
 ---
+title: Functions
 date: 2020-01-01
 draft: false
-title: Functions
 info: Some Functions which are useful + examples
 ---
-
-# Functions
 
 Here are some Functions which are useful.
 

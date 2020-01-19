@@ -1,11 +1,11 @@
 ---
-title: terranix vs HCL
+title: differences between terranix and HCL
 date: 2020-01-10
 draft: false
 info: Syntax differences between terranix and HCL
 ---
 
-# Syntax differences between terranix and HCL
+## declarations
 
 In **HCL** you would do something like this:
 
