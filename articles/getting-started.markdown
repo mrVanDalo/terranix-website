@@ -3,6 +3,7 @@ title: Getting Started
 date: 2020-11-11
 draft: false
 info: A quick introduction on how to start.
+letter: g
 ---
 
 Let's have a quick overview on how you would use Terranix.

@@ -23,13 +23,14 @@ main =
       compile copyFileCompiler
 
     -- css files
-    match "src/lessc/page/main.less" $ do
-      route $ customRoute $ const "src/main.css"
+    match "src/lessc/hack.less" $ do
+      route $ customRoute $ const "css/hack.css"
       compile $
         getResourceString >>=
         withItemBody
           (unixFilter "lessc" ["-", "--include-path=./src/lessc/page/"]) >>=
         return . fmap compressCss
+
     -- match "src/lessc/remark/main-dark.less" $ do
     --   route $ customRoute $ const "src/remark-dark.css"
     --   compile $
@@ -152,19 +153,14 @@ pandocCompilerWithoutToc =
 createDefaultIndex :: String -> Context String
 createDefaultIndex groupName =
   let navigationItems =
-        [ ("/", "main")
-        , ("/articles.html", "articles")
-        , ("/slides.html", "slides")
-        , ("/about.html", "about")
-        ]
+        [ ("/", "main")]
       listItem (path, label) active =
-        let listPart content =
-              if active
-                then "<li class=\"active\">" ++ content ++ "<li>"
-                else "<li>" ++ content ++ "</li>"
-            linkPart url content =
-              "<a href=\"" ++ url ++ "\">" ++ content ++ "</a>"
-         in listPart (linkPart path label)
+        let linkPart = if active then linkPart' "nav-item active" else linkPart' "nav-item"
+            linkPart' cssClass url content =
+              "<a class=\"" ++ cssClass ++ "\" href=\"" ++ url ++ "\">" ++ content ++ "</a>"
+
+         in linkPart path label
+
       navigation =
         foldl
           (\result item@(_, name) -> result ++ listItem item (name == groupName))

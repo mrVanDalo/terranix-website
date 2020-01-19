@@ -2,8 +2,6 @@
 title: terranix.org
 ---
 
-# terranix
-
 A NixOS way to create [terraform json](https://www.terraform.io/docs/configuration/syntax-json.html) files.
 
 ## Features

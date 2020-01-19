@@ -685,32 +685,17 @@ select.form-control{
     }
 }
 .menu{
-    width:100%
-}
-.menu .menu-item{
+  width:100%;
+  .menu-item {
     display:block;
     color:#616161;
-    border-color:#616161
-}
-.menu .menu-item.active,.menu .menu-item:hover{
+    border-color:#616161;
+    &.active,&:hover {
     color:#000;
     border-color:#000;
-    background-color:transparent
-}
-
-.nav{
-  width:100%
-}
-.nav .nav-item{
-  /* display:block; */
-  color:#616161;
-  margin-right: 10px;
-  border-color:#616161
-}
-.nav .nav-item.active,.nav .nav-item:hover{
-  color:#000;
-  border-color:#000;
-  background-color:transparent
+    background-color:transparent;
+    }
+  }
 }
 
 @media screen and (max-width:768px){
@@ -738,4 +723,3 @@ select.form-control{
         width:100%
     }
 }
-

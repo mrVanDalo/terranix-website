@@ -3,6 +3,7 @@ title: Functions
 date: 2020-01-01
 draft: false
 info: Some Functions which are useful + examples
+letter: f
 ---
 
 Here are some Functions which are useful.
