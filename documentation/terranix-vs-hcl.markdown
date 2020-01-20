@@ -4,6 +4,7 @@ order: 2
 draft: false
 info: Syntax differences between terranix and HCL
 letter: t
+preview: true
 ---
 
 ## declarations

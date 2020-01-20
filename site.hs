@@ -2,7 +2,7 @@
 {-# LANGUAGE TupleSections     #-}
 
 --------------------------------------------------------------------------------
-import           Control.Monad       (liftM)
+import           Control.Monad       (liftM, filterM)
 import           Data.List           (isSuffixOf)
 import           Data.List           (intersperse, sortBy)
 import           Data.Monoid         (mappend)
@@ -32,28 +32,40 @@ main =
           (unixFilter "lessc" ["-", "--include-path=./src/lessc/page/"]) >>=
         return . fmap compressCss
     matchMetadata
-      "articles/**"
+      "documentation/**"
       (\meta ->
          case lookupString "draft" meta of
            Just "false" -> True
            Nothing      -> True
            _            -> False) $ do
       route $
-        directorizeRoute `composeRoutes` gsubRoute "articles/" (const "") `composeRoutes`
+        directorizeRoute `composeRoutes` gsubRoute "documentation/" (const "") `composeRoutes`
         setExtension "html"
       compile $
         pandocCompilerWithToc >>=
         loadAndApplyTemplate
           "templates/layout.html"
-          (createDefaultIndex "articles") >>=
+          (createDefaultIndex "documentation") >>=
         relativizeUrls >>=
         deIndexURLs
+    match "documentation.markdown" $ do
+      route $ setExtension "html"
+      compile $ do
+        documentations <- loadAll "documentation/**"
+        let indexCtx =
+              listField "posts" postCtx (sortByOrder $ documentations) `mappend`
+              createDefaultIndex "documentation"
+        pandocCompilerWithoutToc >>= applyAsTemplate indexCtx >>=
+          loadAndApplyTemplate "templates/layout.html" indexCtx >>=
+          relativizeUrls >>=
+          deIndexURLs
     match "index.markdown" $ do
       route $ setExtension "html"
       compile $ do
-        articles <- loadAll "articles/**"
+        documentations <- loadAll "documentation/**"
+        a <- sortByOrder $ documentations  
         let indexCtx =
-              listField "posts" postCtx (sortByOrder $ articles) `mappend`
+              listField "posts" postCtx ( filterByPreview a ) `mappend`
               createDefaultIndex "main"
         pandocCompilerWithoutToc >>= applyAsTemplate indexCtx >>=
           loadAndApplyTemplate "templates/layout.html" indexCtx >>=
@@ -61,10 +73,21 @@ main =
           deIndexURLs
     match "templates/*" $ compile templateBodyCompiler
 
+
 sortByOrder :: MonadMetadata m => [Item a] -> m [Item a]
 sortByOrder =
   let getOrder id' = getMetadataField' id' "order"
    in sortByM (getOrder . itemIdentifier)
+
+filterByPreview :: MonadMetadata m => [Item a] -> m [Item a]
+filterByPreview = let
+  hasPreview id' = do
+    result <- getMetadataField id' "preview"
+    case result of
+      Just "true" -> return True
+      _ -> return False
+  in filterM ( hasPreview . itemIdentifier )
+
 
 sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
 sortByM f xs =
@@ -96,7 +119,8 @@ pandocCompilerWithoutToc =
 
 createDefaultIndex :: String -> Context String
 createDefaultIndex groupName =
-  let navigationItems = [("/", "main")]
+  let navigationItems = [ ("/", "main")
+                        , ("/documentation.html", "documentation")]
       listItem (path, label) active =
         let linkPart =
               if active

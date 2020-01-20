@@ -3,6 +3,7 @@ title: Resources
 info: List of Documentation and Code related to terranix
 order: 99
 letter: r
+preview: true
 ---
 
 A list of documentation and code, related to terranix

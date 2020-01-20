@@ -4,6 +4,7 @@ order: 1
 draft: false
 info: A quick introduction on how to start.
 letter: g
+preview: true
 ---
 
 Let's have a quick overview on how you would use Terranix.

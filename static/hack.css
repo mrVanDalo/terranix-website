@@ -708,13 +708,13 @@ select.form-control{
 }
 .nav .nav-item{
   /* display:block; */
-  color:#616161;
+  color:#000;
   margin-right: 10px;
-  border-color:#616161
+  border-color:#000
 }
 .nav .nav-item.active,.nav .nav-item:hover{
-  color:#000;
-  border-color:#000;
+  color:#da005e;
+  border-color:#da005e;
   background-color:transparent
 }
 
