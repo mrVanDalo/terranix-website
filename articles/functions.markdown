@@ -1,6 +1,6 @@
 ---
 title: Functions
-date: 2020-01-01
+order: 80
 draft: false
 info: Some Functions which are useful + examples
 letter: f

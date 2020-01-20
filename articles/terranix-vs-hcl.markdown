@@ -1,6 +1,6 @@
 ---
 title: Differences between terranix and HCL
-date: 2020-01-10
+order: 2
 draft: false
 info: Syntax differences between terranix and HCL
 letter: t

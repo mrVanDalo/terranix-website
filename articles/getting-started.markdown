@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-date: 2020-11-11
+order: 1
 draft: false
 info: A quick introduction on how to start.
 letter: g
