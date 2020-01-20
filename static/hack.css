@@ -166,6 +166,10 @@ a:hover{
     margin-top:20px;
     margin-bottom:20px
 }
+.hack ul ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .hack h1{
     position:relative;
     display:inline-block;
