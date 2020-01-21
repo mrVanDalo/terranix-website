@@ -1,7 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TupleSections     #-}
 
---------------------------------------------------------------------------------
 import           Control.Monad       (liftM, filterM)
 import           Data.List           (isSuffixOf)
 import           Data.List           (intersperse, sortBy)
@@ -11,7 +10,6 @@ import           Hakyll
 import           System.FilePath     (splitExtension)
 import           Text.Pandoc.Options
 
---------------------------------------------------------------------------------
 main :: IO ()
 main =
   hakyllWith myConfiguration $
