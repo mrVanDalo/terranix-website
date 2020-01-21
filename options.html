@@ -5,548 +5,509 @@ You can also seem them via man terranix-modules.
 <div class="alert alert-error">This page is still a work in progress and will change soon</div>
 </p>
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.etcd</div>
-    <div class="media-content">etcd backend
+
+<ul class="options-list">
+
+
+<li>
+<strong>backend.etcd</strong>
+<p><strong>type</strong>: null or submodule</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: etcd backend
 https://www.terraform.io/docs/backends/types/etcd.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.etcd.endpoints</div>
-    <div class="media-content">A space-separated list of the etcd endpoints
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.etcd.endpoints</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: A space-separated list of the etcd endpoints
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.etcd.password</div>
-    <div class="media-content">the password
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.etcd.password</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: the password
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.etcd.path</div>
-    <div class="media-content">The path where to store the state
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.etcd.path</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: The path where to store the state
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.etcd.username</div>
-    <div class="media-content">the username
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.etcd.username</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: the username
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.local</div>
-    <div class="media-content">local backend
+<li>
+<strong>backend.local</strong>
+<p><strong>type</strong>: null or submodule</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: local backend
 https://www.terraform.io/docs/backends/types/local.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.local.path</div>
-    <div class="media-content">path to the state file
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.local.path</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: path to the state file
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.s3</div>
-    <div class="media-content">s3 backend
+<li>
+<strong>backend.s3</strong>
+<p><strong>type</strong>: null or submodule</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: s3 backend
 https://www.terraform.io/docs/backends/types/s3.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.s3.bucket</div>
-    <div class="media-content">bucket name
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.s3.bucket</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: bucket name
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.s3.key</div>
-    <div class="media-content">path to the state file in the bucket
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.s3.key</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: path to the state file in the bucket
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">backend.s3.region</div>
-    <div class="media-content">region of the bucket
-</div>
-  </div>
-</div>
+<li>
+<strong>backend.s3.region</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: region of the bucket
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.enable</div>
-    <div class="media-content">Whether to enable enable cloudflare provider.</div>
-  </div>
-</div>
+<li>
+<strong>cloudflare.enable</strong>
+<p><strong>type</strong>: boolean</p>
+<p><strong>default</strong>: false</p>
+<p><strong>description</strong>: Whether to enable enable cloudflare provider.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+<p><strong>example</strong>: true
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider</div>
-    <div class="media-content">This option has no description.</div>
-  </div>
-</div>
+<li>
+<strong>cloudflare.provider</strong>
+<p><strong>type</strong>: submodule</p>
+<p><strong>default</strong>: {"email":"${ var.cloudflare_email }","token":"${ var.cloudflare_token }"}</p>
+<p><strong>description</strong>: This option has no description.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.api_client_logging</div>
-    <div class="media-content">Whether to print logs from the API client (using the default log library logger).
+<li>
+<strong>cloudflare.provider.api_client_logging</strong>
+<p><strong>type</strong>: null or boolean</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Whether to print logs from the API client (using the default log library logger).
 This can also be specified with the CLOUDFLARE_API_CLIENT_LOGGING shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.email</div>
-    <div class="media-content">The email associated with the account. This can also be specified with the CLOUDFLARE_EMAIL shell environment variable.
-</div>
-  </div>
-</div>
+<li>
+<strong>cloudflare.provider.email</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: ${ var.cloudflare_email }</p>
+<p><strong>description</strong>: The email associated with the account. This can also be specified with the CLOUDFLARE_EMAIL shell environment variable.
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.max_backoff</div>
-    <div class="media-content">Maximum backoff period in seconds after failed API calls
+<li>
+<strong>cloudflare.provider.max_backoff</strong>
+<p><strong>type</strong>: null or signed integer</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Maximum backoff period in seconds after failed API calls
 This can also be specified with the CLOUDFLARE_MAX_BACKOFF shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.min_backoff</div>
-    <div class="media-content">Minimum backoff period in seconds after failed API calls.
+<li>
+<strong>cloudflare.provider.min_backoff</strong>
+<p><strong>type</strong>: null or signed integer</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Minimum backoff period in seconds after failed API calls.
 This can also be specified with the CLOUDFLARE_MIN_BACKOFF shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.org_id</div>
-    <div class="media-content">Configure API client with this organisation ID, so calls use the organization API rather
+<li>
+<strong>cloudflare.provider.org_id</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Configure API client with this organisation ID, so calls use the organization API rather
 than the (default) user API. This is required for other users in your organization to have
 access to the resources you manage. This can also be specified with the CLOUDFLARE_ORG_ID
 shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.retries</div>
-    <div class="media-content">Maximum number of retries to perform when an API request fails.
+<li>
+<strong>cloudflare.provider.retries</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Maximum number of retries to perform when an API request fails.
 This can also be specified with the CLOUDFLARE_RETRIES shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.rps</div>
-    <div class="media-content">RPS limit to apply when making calls to the API.
+<li>
+<strong>cloudflare.provider.rps</strong>
+<p><strong>type</strong>: null or signed integer</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: RPS limit to apply when making calls to the API.
 This can also be specified with the CLOUDFLARE_RPS shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.token</div>
-    <div class="media-content">The Cloudflare API token. This can also be specified with the CLOUDFLARE_TOKEN shell environment variable.
-</div>
-  </div>
-</div>
+<li>
+<strong>cloudflare.provider.token</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: ${ var.cloudflare_token }</p>
+<p><strong>description</strong>: The Cloudflare API token. This can also be specified with the CLOUDFLARE_TOKEN shell environment variable.
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">cloudflare.provider.use_org_from_zone</div>
-    <div class="media-content">Takes a zone name value. This is used to lookup the organization ID that owns this zone,
+<li>
+<strong>cloudflare.provider.use_org_from_zone</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: Takes a zone name value. This is used to lookup the organization ID that owns this zone,
 which will be used to configure the API client. If org_id is also specified, this field will
 be ignored. This can also be specified with the CLOUDFLARE_ORG_ZONE shell environment variable.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/cloudflare.nix#blob-path"> modules/provider/cloudflare.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">github.enable</div>
-    <div class="media-content">Whether to enable enable github provider.</div>
-  </div>
-</div>
+<li>
+<strong>github.enable</strong>
+<p><strong>type</strong>: boolean</p>
+<p><strong>default</strong>: false</p>
+<p><strong>description</strong>: Whether to enable enable github provider.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/github.nix#blob-path"> modules/provider/github.nix</a>
+<p><strong>example</strong>: true
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">github.provider</div>
-    <div class="media-content">This option has no description.</div>
-  </div>
-</div>
+<li>
+<strong>github.provider</strong>
+<p><strong>type</strong>: submodule</p>
+<p><strong>default</strong>: {"token":"${ var.github_api_token }"}</p>
+<p><strong>description</strong>: This option has no description.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/github.nix#blob-path"> modules/provider/github.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">github.provider.token</div>
-    <div class="media-content">login token
-</div>
-  </div>
-</div>
+<li>
+<strong>github.provider.token</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: ${ var.github_api_token }</p>
+<p><strong>description</strong>: login token
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/github.nix#blob-path"> modules/provider/github.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">hcloud.enable</div>
-    <div class="media-content">Whether to enable enable hcloud provider.</div>
-  </div>
-</div>
+<li>
+<strong>hcloud.enable</strong>
+<p><strong>type</strong>: boolean</p>
+<p><strong>default</strong>: false</p>
+<p><strong>description</strong>: Whether to enable enable hcloud provider.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/hcloud.nix#blob-path"> modules/provider/hcloud.nix</a>
+<p><strong>example</strong>: true
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">hcloud.provider</div>
-    <div class="media-content">This option has no description.</div>
-  </div>
-</div>
+<li>
+<strong>hcloud.provider</strong>
+<p><strong>type</strong>: submodule</p>
+<p><strong>default</strong>: {"token":"${ var.hcloud_api_token }"}</p>
+<p><strong>description</strong>: This option has no description.</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/hcloud.nix#blob-path"> modules/provider/hcloud.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">hcloud.provider.endpoint</div>
-    <div class="media-content">- (Optional, string) Hetzner Cloud API endpoint, can be used to override the default API Endpoint https://api.hetzner.cloud/v1.
-</div>
-  </div>
-</div>
+<li>
+<strong>hcloud.provider.endpoint</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: - (Optional, string) Hetzner Cloud API endpoint, can be used to override the default API Endpoint https://api.hetzner.cloud/v1.
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/hcloud.nix#blob-path"> modules/provider/hcloud.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">hcloud.provider.poll_interval</div>
-    <div class="media-content">- (Optional, string) Configures the interval in which actions are polled by the client. Default 500ms. Increase this interval if you run into rate limiting errors.
-</div>
-  </div>
-</div>
+<li>
+<strong>hcloud.provider.poll_interval</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: - (Optional, string) Configures the interval in which actions are polled by the client. Default 500ms. Increase this interval if you run into rate limiting errors.
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/hcloud.nix#blob-path"> modules/provider/hcloud.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">hcloud.provider.token</div>
-    <div class="media-content">To get started using the API you first
+<li>
+<strong>hcloud.provider.token</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: ${ var.hcloud_api_token }</p>
+<p><strong>description</strong>: To get started using the API you first
 need an API token. Sign in into the Hetzner Cloud Console choose a
 project, go to Access → Tokens, and create a new token. Make sure
 to copy the token because it won’t be shown to you again.
 A token is bound to a project, to interact with the API of another
 project you have to create a new token inside the project
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provider/hcloud.nix#blob-path"> modules/provider/hcloud.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">provisioner.privateKeyFile</div>
-    <div class="media-content">private key filename for ssh access for provioning
+<li>
+<strong>provisioner.privateKeyFile</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: private key filename for ssh access for provioning
 see https://www.terraform.io/docs/provisioners/connection.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/provisioner.nix#blob-path"> modules/provisioner.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.etcd</div>
-    <div class="media-content">etcd remote state
+<li>
+<strong>remote_state.etcd</strong>
+<p><strong>type</strong>: attribute set of submodules</p>
+<p><strong>default</strong>: {}</p>
+<p><strong>description</strong>: etcd remote state
 https://www.terraform.io/docs/backends/types/etcd.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.etcd.&lt;name&gt;.endpoints</div>
-    <div class="media-content">A space-separated list of the etcd endpoints
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.etcd.&lt;name&gt;.endpoints</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: A space-separated list of the etcd endpoints
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.etcd.&lt;name&gt;.password</div>
-    <div class="media-content">the password
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.etcd.&lt;name&gt;.password</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: the password
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.etcd.&lt;name&gt;.path</div>
-    <div class="media-content">The path where to store the state
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.etcd.&lt;name&gt;.path</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: The path where to store the state
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.etcd.&lt;name&gt;.username</div>
-    <div class="media-content">the username
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.etcd.&lt;name&gt;.username</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: the username
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.local</div>
-    <div class="media-content">local remote state
+<li>
+<strong>remote_state.local</strong>
+<p><strong>type</strong>: attribute set of submodules</p>
+<p><strong>default</strong>: {}</p>
+<p><strong>description</strong>: local remote state
 https://www.terraform.io/docs/backends/types/local.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.local.&lt;name&gt;.path</div>
-    <div class="media-content">path to the state file
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.local.&lt;name&gt;.path</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: path to the state file
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.s3</div>
-    <div class="media-content">s3 remote state
+<li>
+<strong>remote_state.s3</strong>
+<p><strong>type</strong>: attribute set of submodules</p>
+<p><strong>default</strong>: {}</p>
+<p><strong>description</strong>: s3 remote state
 https://www.terraform.io/docs/backends/types/s3.html
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.s3.&lt;name&gt;.bucket</div>
-    <div class="media-content">bucket name
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.s3.&lt;name&gt;.bucket</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: bucket name
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.s3.&lt;name&gt;.key</div>
-    <div class="media-content">path to the state file in the bucket
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.s3.&lt;name&gt;.key</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: path to the state file in the bucket
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">remote_state.s3.&lt;name&gt;.region</div>
-    <div class="media-content">region of the bucket
-</div>
-  </div>
-</div>
+<li>
+<strong>remote_state.s3.&lt;name&gt;.region</strong>
+<p><strong>type</strong>: string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: region of the bucket
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/terraform/backends.nix#blob-path"> modules/terraform/backends.nix</a>
+
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">users</div>
-    <div class="media-content">user managment for servers. usually admins.
+<li>
+<strong>users</strong>
+<p><strong>type</strong>: attribute set of attribute set of submoduless</p>
+<p><strong>default</strong>: {}</p>
+<p><strong>description</strong>: user managment for servers. usually admins.
 A gloabal container of users which servers should
 pull from and allow access to them.
-</div>
-  </div>
-</div>
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/users.nix#blob-path"> modules/users.nix</a>
+<p><strong>example</strong>: {"admins":{"lassuls":{"publicKey":"ssh-rsa ABKAB3NzaC1yc2EAAAA.."},"mrVanDalo":{"publicKey":"ssh-rsa AAAAB3NzaC1yc2EAAAA.."}}}
+</li>
 
 
-<div class="media">
-  <div class="media-left">
-    <div class="avatarholder"></div>
-  </div>
-  <div class="media-body">
-    <div class="media-heading">users.&lt;name&gt;.&lt;name&gt;.publicKey</div>
-    <div class="media-content">public ssh key of user.
-</div>
-  </div>
-</div>
+<li>
+<strong>users.&lt;name&gt;.&lt;name&gt;.publicKey</strong>
+<p><strong>type</strong>: null or string</p>
+<p><strong>default</strong>: null</p>
+<p><strong>description</strong>: public ssh key of user.
+</p>
+<p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master/modules/users.nix#blob-path"> modules/users.nix</a>
 
+</li>
+
+</ul>

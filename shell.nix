@@ -29,19 +29,23 @@ let
 
     <div class="alert alert-error">This page is still a work in progress and will change soon</div>
     </p>
+
+
+    <ul class="options-list">
+
     EOF
 
     cat ${toString ./.}/options.json | ${pkgs.jq}/bin/jq --raw-output 'to_entries | .[] | "
-    <div class=\"media\">
-      <div class=\"media-left\">
-        <div class=\"avatarholder\"></div>
-      </div>
-      <div class=\"media-body\">
-        <div class=\"media-heading\">\( @html "\(.key)" )</div>
-        <div class=\"media-content\">\( @html "\( .value.description )" )</div>
-      </div>
-    </div>
+    <li>
+    <strong>\(@html "\( .key )" )</strong>
+    <p><strong>type</strong>: \( .value.type )</p>
+    <p><strong>default</strong>: \( .value.default )</p>
+    <p><strong>description</strong>: \( @html "\(.value.description)" )</p>
+    <p><strong>defined</strong>: in <a href=\"\( .value.declarations[0].url )\"> \( .value.declarations[0].path )</a>
+    \( if .value.example then "<p><strong>example</strong>: \(.value.example)" else "" end )
+    </li>
     "' >> ${toString ./.}/options.html
+    echo "</ul>" >> ${toString ./.}/options.html
     '';
 
 

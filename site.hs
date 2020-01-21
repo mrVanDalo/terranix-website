@@ -18,12 +18,12 @@ main =
     match "images/*" $ do
       route idRoute
       compile copyFileCompiler
+    -- css files
     match "static/*" $ do
       route idRoute
       compile copyFileCompiler
-    -- css files
-    match "src/lessc/hack.less" $ do
-      route $ customRoute $ const "css/hack.css"
+    match "src/lessc/main.less" $ do
+      route $ customRoute $ const "css/main.css"
       compile $
         getResourceString >>=
         withItemBody
