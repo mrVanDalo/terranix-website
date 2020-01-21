@@ -53,17 +53,24 @@ main =
       compile $ do
         documentations <- loadAll "documentation/**"
         let indexCtx =
-              listField "posts" postCtx (sortByOrder $ documentations) `mappend`
+              listField "posts" postCtx (sortByOrder documentations) `mappend`
               createDefaultIndex "documentation"
         pandocCompilerWithoutToc >>= applyAsTemplate indexCtx >>=
           loadAndApplyTemplate "templates/layout.html" indexCtx >>=
+          relativizeUrls >>=
+          deIndexURLs
+    match "options.html" $ do
+      route $ setExtension "html"
+      compile $ do
+        getResourceString >>=
+          loadAndApplyTemplate "templates/layout.html" (createDefaultIndex "options") >>=
           relativizeUrls >>=
           deIndexURLs
     match "index.markdown" $ do
       route $ setExtension "html"
       compile $ do
         documentations <- loadAll "documentation/**"
-        a <- sortByOrder $ documentations  
+        a <- sortByOrder documentations
         let indexCtx =
               listField "posts" postCtx ( filterByPreview a ) `mappend`
               createDefaultIndex "main"
@@ -120,7 +127,8 @@ pandocCompilerWithoutToc =
 createDefaultIndex :: String -> Context String
 createDefaultIndex groupName =
   let navigationItems = [ ("/", "main")
-                        , ("/documentation.html", "documentation")]
+                        , ("/documentation.html", "documentation")
+                        , ("/options.html", "options")]
       listItem (path, label) active =
         let linkPart =
               if active
