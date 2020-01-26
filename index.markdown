@@ -13,6 +13,28 @@ A NixOS way to create [terraform json](https://www.terraform.io/docs/configurati
 * The full power of all the tooling in `pkgs` of NixOS (fetchgit,fetchurl,writers, ...)
 * Documentation generation out of a `config.nix` as json or man page.
 
+## News
+
+<div class="media">
+  <div class="media-left">
+    <a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.0">
+    <div class="avatarholder">r</div>
+    </a>
+  </div>
+  <div class="media-body">
+    <div class="media-heading">
+      <a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.0">
+        version 2.2.0 released
+      </a>
+    </div>
+    <div class="media-content">
+      I'm happy to announce that version 2.2.0 is ready.
+      You are now able to render documentation similar
+      to `man configuration.nix` in NixOS, using `terranix-doc-man`.
+    </div>
+  </div>
+</div>
+
 # What is Terraform?
 
 Terraform a tool to interact with APIs via declarative files.
