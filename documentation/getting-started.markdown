@@ -13,20 +13,32 @@ If you search for working examples have a look at the
 [ examples folder at github ](https://github.com/mrVanDalo/terranix/tree/master/examples).
 
 
-## How to Install
+## How to Setup
 
-You can install terranix via an [overlay](https://nixos.wiki/wiki/Overlays) like this:
+A convenient way is to create a shell.nix
+which holds you terranix and terraform setup.
 
 ```nix
-terranix = callPackage (super.fetchgit {
+{ pkgs ? import <nixpkgs> { } }:
+let
+
+  hcloud_api_token = "`${pkgs.pass}/bin/pass development/hetzner.com/api-token`";
+
+  terranix = pkgs.callPackage (pkgs.fetchgit {
     url = "https://github.com/mrVanDalo/terranix.git";
     rev = "6097722f3a94972a92d810f3a707351cd425a4be";
     sha256 = "1d8w82mvgflmscvq133pz9ynr79cgd5qjggng85byk8axj6fg6jw";
   }) { };
+
+  terraform = pkgs.writers.writeBashBin "terraform" ''
+    export TF_VAR_hcloud_api_token=${hcloud_api_token}
+    ${pkgs.terraform_0_11}/bin/terraform "$@"
+  '';
+
+in pkgs.mkShell {
+  buildInputs = [ terranix terraform ];
+}
 ```
-
-## How to use
-
 
 ### config.nix 
 
@@ -52,14 +64,17 @@ create a `config.nix` for example
 
 ### Create a Server
 
-To apply your configuration, we will generate a json file in terraform json format.
-After that we run terraform to apply theses changes.
+Next lets generate a json file in terraform json format
+and run terraform apply
+to let terraform do it's magic.
 
 ```shell
 terranix > config.tf.json && terraform init && terraform apply
 ```
 
 ### Destroy a Server
+
+cleaning everything up is the job of terraform, just run : 
 
 ```shell
 terraform destroy
