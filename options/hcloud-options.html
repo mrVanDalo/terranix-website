@@ -1,0 +1,274 @@
+---
+title: hcloud-options
+letter: h
+info: ""
+---
+<ul>
+<li><a href="#hcloud-options">hcloud-options</a>
+<ul>
+<li><a href="#with-terraform-version-0.11">with terraform version 0.11</a></li>
+<li><a href="#with-terraform-version-0.12">with terraform version 0.12</a></li>
+</ul></li>
+<li><a href="#options">options</a></li>
+</ul>
+<div class="alert alert-error">
+This page is under construction!
+</div>
+<p>An opinionated <a href="https://www.terraform.io/docs/providers/hcloud/index.html">hetzner cloud</a> module. Read more at <a href="https://github.com/mrvandalo/terranix-hcloud">https://github.com/mrvandalo/terranix-hcloud</a></p>
+<h2 id="with-terraform-version-0.11">with terraform version 0.11</h2>
+<p>To use this module with terranix and terraform version 0.11</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">{</span> <span class="ex">pkgs</span>, ...<span class="kw">}</span>:</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">let</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="ex">hcloud-modules</span> = pkgs.fetchgit{</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="ex">url</span> = <span class="st">&quot;https://github.com/mrVanDalo/terranix-hcloud.git&quot;</span><span class="kw">;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="fu">rev</span> = <span class="st">&quot;a020c6df7d5b301d561d1612737a4905a18dbdd4&quot;</span><span class="kw">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="ex">sha256</span> = <span class="st">&quot;0a3j9s5hljz1065gqrj304p6xj6grklrl8k7jblawx8c34kibd6y&quot;</span><span class="kw">;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  };</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">in</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">{</span> <span class="ex">imports</span> = [ (toString hcloud-modules) ]; <span class="kw">}</span></span></code></pre></div>
+<h2 id="with-terraform-version-0.12">with terraform version 0.12</h2>
+<p>To use this module with terranix and terraform version 0.12</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">{</span> <span class="ex">pkgs</span>, ...<span class="kw">}</span>:</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">let</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="ex">hcloud-modules</span> = pkgs.fetchgit{</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="ex">url</span> = <span class="st">&quot;https://github.com/mrVanDalo/terranix-hcloud.git&quot;</span><span class="kw">;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="fu">rev</span> = <span class="st">&quot;c3571f76664e1813f90d97b8c194a1e0149e895e&quot;</span><span class="kw">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="ex">sha256</span> = <span class="st">&quot;0plld74wincyy3c5gdfqh78pzrqibxh6r839dm0c717fajr9imwb&quot;</span><span class="kw">;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  };</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">in</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">{</span> <span class="ex">imports</span> = [ (toString hcloud-modules) ]; <span class="kw">}</span></span></code></pre></div>
+<h1 id="options">options</h1>
+<p>These options are available by the module</p>
+<div class="alert alert-error">
+Links will be fixed soon
+</div>
+<ul class="options-list">
+
+  <li>
+  <strong>hcloud.enable</strong>
+  <p><strong>type</strong>: boolean</p>
+  <p><strong>default</strong>: false</p>
+  <p><strong>description</strong>: Whether to enable hcloud provider
+See https://www.terraform.io/docs/providers/hcloud/index.html for documentation.
+.</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix</a>
+  <p><strong>example</strong>: true
+  </li>
+  
+
+  <li>
+  <strong>hcloud.export.nix</strong>
+  <p><strong>type</strong>: null or string</p>
+  <p><strong>default</strong>: null</p>
+  <p><strong>description</strong>: Export hcloud information as nix file.
+Useful when if you want to import
+run a NixOS script after the terraform.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/export.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/export.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver</strong>
+  <p><strong>type</strong>: attribute set of submodules</p>
+  <p><strong>default</strong>: {}</p>
+  <p><strong>description</strong>: create a nixos server, via nixos-infect.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.backups</strong>
+  <p><strong>type</strong>: boolean</p>
+  <p><strong>default</strong>: false</p>
+  <p><strong>description</strong>: enable backups or not
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.channel</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: nixos-19.09</p>
+  <p><strong>description</strong>: nixos channel to install
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.configurationFile</strong>
+  <p><strong>type</strong>: null or path</p>
+  <p><strong>default</strong>: null</p>
+  <p><strong>description</strong>: The configuration.nix,
+only used by the initial
+provisioning by nixos-infect.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.enable</strong>
+  <p><strong>type</strong>: boolean</p>
+  <p><strong>default</strong>: false</p>
+  <p><strong>description</strong>: Whether to enable nixserver.</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  <p><strong>example</strong>: true
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.name</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: nixserver-‹name›</p>
+  <p><strong>description</strong>: name of the server
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.provisioners</strong>
+  <p><strong>type</strong>: list of attribute sets</p>
+  <p><strong>default</strong>: []</p>
+  <p><strong>description</strong>: provision steps. see `hcloud.server.provisioners`.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.nixserver.&lt;name&gt;.serverType</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: cx11</p>
+  <p><strong>description</strong>: Hardware equipment.This options influences costs!
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/nixserver.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.provider.endpoint</strong>
+  <p><strong>type</strong>: null or string</p>
+  <p><strong>default</strong>: null</p>
+  <p><strong>description</strong>: Hetzner Cloud API endpoint,
+can be used to override the default API Endpoint https://api.hetzner.cloud/v1
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.provider.token</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: ${ var.hcloud_api_token }</p>
+  <p><strong>description</strong>: You need an API token to use the API.
+Sign in into the Hetzner Cloud Console choose a project,
+go to Access → Tokens, and create a new token. Make sure
+to copy the token because it won’t be shown to you again.
+A token is bound to a project, to interact with the API of another
+project you have to create a new token inside the project
+
+If you use a variable you can set it via the environment variable
+TF_VAR_hcloud_api_token.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/provider.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server</strong>
+  <p><strong>type</strong>: attribute set of submodules</p>
+  <p><strong>default</strong>: {}</p>
+  <p><strong>description</strong>: servers deployed to the hcloud.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.backups</strong>
+  <p><strong>type</strong>: boolean</p>
+  <p><strong>default</strong>: false</p>
+  <p><strong>description</strong>: enable backups or not
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.enable</strong>
+  <p><strong>type</strong>: boolean</p>
+  <p><strong>default</strong>: false</p>
+  <p><strong>description</strong>: Whether to enable really deploy server
+.</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  <p><strong>example</strong>: true
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.image</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: ubuntu-18.04</p>
+  <p><strong>description</strong>: image to spawn on the server
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.name</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: ‹name›</p>
+  <p><strong>description</strong>: name of the server
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.provisioners</strong>
+  <p><strong>type</strong>: list of attribute sets</p>
+  <p><strong>default</strong>: []</p>
+  <p><strong>description</strong>: provision steps.
+
+`file` and `remote-exec` steps
+automatically get the connection
+part setup, if you configure
+the `provisioner.privateKeyFile`
+parameter.
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  <p><strong>example</strong>: [{"file":{"destination":"/root/.zshrc","source":"~/.zshrc"}},{"remote-exec":{"inline":["shutdown -r +1"]}}]
+  </li>
+  
+
+  <li>
+  <strong>hcloud.server.&lt;name&gt;.serverType</strong>
+  <p><strong>type</strong>: string</p>
+  <p><strong>default</strong>: cx11</p>
+  <p><strong>description</strong>: Hardware equipment. This options influences costs!
+</p>
+  <p><strong>defined</strong>: in <a href="https://github.com/mrVanDalo/terranix/blob/master//home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix#blob-path"> /home/palo/dev/terranix-hcloud/terraform-0.11/module/server.nix</a>
+  
+  </li>
+  
+</ul>

@@ -57,10 +57,10 @@ main =
           loadAndApplyTemplate "templates/layout.html" indexCtx >>=
           relativizeUrls >>=
           deIndexURLs
-    match "options.html" $ do
+    match "options/**.html" $ do
       route $ setExtension "html"
       compile $ do
-        getResourceString >>=
+        getResourceBody >>=
           loadAndApplyTemplate "templates/layout.html" (createDefaultIndex "options") >>=
           relativizeUrls >>=
           deIndexURLs
@@ -76,12 +76,29 @@ main =
           loadAndApplyTemplate "templates/layout.html" indexCtx >>=
           relativizeUrls >>=
           deIndexURLs
+    match "options.markdown" $ do
+      route $ setExtension "html"
+      compile $ do
+        options <- loadAll "options/**.html"
+        let a = sortByTitle options
+        let indexCtx =
+              listField "posts" postCtx ( a ) `mappend`
+              createDefaultIndex "options"
+        pandocCompilerWithoutToc >>= applyAsTemplate indexCtx >>=
+          loadAndApplyTemplate "templates/layout.html" indexCtx >>=
+          relativizeUrls >>=
+          deIndexURLs
     match "templates/*" $ compile templateBodyCompiler
 
 
 sortByOrder :: MonadMetadata m => [Item a] -> m [Item a]
 sortByOrder =
   let getOrder id' = getMetadataField' id' "order"
+   in sortByM (getOrder . itemIdentifier)
+
+sortByTitle:: MonadMetadata m => [Item a] -> m [Item a]
+sortByTitle =
+  let getOrder id' = getMetadataField' id' "title"
    in sortByM (getOrder . itemIdentifier)
 
 filterByPreview :: MonadMetadata m => [Item a] -> m [Item a]
