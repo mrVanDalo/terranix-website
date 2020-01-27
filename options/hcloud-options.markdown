@@ -3,8 +3,6 @@
   * [with terraform version 0.12](#with-terraform-version-0.12)
 * [options](#options)
 
-<div class="alert alert-error">This page is under construction!</div>
-
 An opinionated 
 [hetzner cloud](https://www.terraform.io/docs/providers/hcloud/index.html)
 module.
@@ -46,5 +44,3 @@ in
 # options
 
 These options are available by the module
-
-<div class="alert alert-error">Links will be fixed soon</div>
