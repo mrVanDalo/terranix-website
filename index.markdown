@@ -50,6 +50,8 @@ to generate documentation of terranix modules.
 
 ## News
 
+<div class="media"> <div class="media-left"> <a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.2"> <div class="avatarholder">r</div> </a> </div> <div class="media-body"> <div class="media-heading"><a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.2"> version 2.2.2 released </a> </div> <div class="media-content"> This release comes with a <code>--with-nulls</code> option, which will not strip nulls from the result.</div> </div> </div>
+
 <div class="media"> <div class="media-left"> <a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.0"> <div class="avatarholder">r</div> </a> </div> <div class="media-body"> <div class="media-heading"><a href="https://github.com/mrVanDalo/terranix/releases/tag/2.2.0"> version 2.2.0 released </a> </div> <div class="media-content"> I'm happy to announce that version 2.2.0 is ready. You are now able to render documentation similar to NixOS. </div> </div> </div>
 
 # Documentation

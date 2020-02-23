@@ -26,8 +26,8 @@ let
 
   terranix = pkgs.callPackage (pkgs.fetchgit{
     url = "https://github.com/mrVanDalo/terranix.git";
-    rev = "68f1addf0f7ea0e87e18dc1cf88e334f03b3f90b";
-    sha256 = "14lr0pnk2a0ihdq51xljj2xcqb75chn3cp2pmhp8dc8bpvrbr0g6";
+    rev = "dfbf4d1fae08da8052ff880c5d02b2eb5857d54c";
+    sha256 = "1qilbvldlq7ybxa3yx99hb8vbmj0sk5x9qqxa4f1czpzj2mja0fn";
   }) {};
 
   terraform = pkgs.writers.writeBashBin "terraform" ''
