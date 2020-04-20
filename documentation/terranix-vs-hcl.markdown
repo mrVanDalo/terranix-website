@@ -80,3 +80,34 @@ The difference is that terranix and terraform references are evaluated different
 terranix references are evaluated when generating the json file, and terraform references are calculated
 during the process.
 
+## escaping expressions
+
+The form `${expression}` is used by terranix and terraform.
+So if you want to use a terraform expression in terranix,
+you have to escape it.
+There are the two context, multi and singe line strings.
+
+### escaping in single line strings
+
+In a single line strings, you escape the via `\${expression}`.
+For example :
+
+```nix
+variable.hcloud_token = {};
+provider.hcloud.token = "\${var.hcloud_token}";
+```
+
+### escaping in multi line strings
+
+In multi line strings, you escape the via `''${expression}`.
+For example :
+
+```nix
+resource.local_file.sshConfig = {
+  filename = "./ssh-config";
+  content = ''
+    Host ''${ hcloud_server.terranix_test.ipv4_address }
+    IdentityFile ./sshkey
+  '';
+};
+```
