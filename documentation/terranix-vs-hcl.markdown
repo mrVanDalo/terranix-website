@@ -80,6 +80,33 @@ The difference is that terranix and terraform references are evaluated different
 terranix references are evaluated when generating the json file, and terraform references are calculated
 during the process.
 
+## multi line sings
+
+In terraform you can create
+[multi line strings](https://www.terraform.io/docs/configuration/expressions.html#string-literals)
+using the `herdoc` style
+
+```hcl
+variable "multiline" {
+  description = <<EOT
+Description for the multi line variable.
+The indention here is not wrong.
+The terminating word must be on a new line without any indention.
+EOT
+}
+```
+
+This won't work in terranix.
+In terranix you have to use the nix way of multi line strings.
+
+```nix
+variable.multiline.description = ''
+  Description for the multi line variable.
+  The indention here is not wrong.
+  All spaces in front of the text block will be removed by terranix.
+'';
+```
+
 ## escaping expressions
 
 The form `${expression}` is used by terranix and terraform.
