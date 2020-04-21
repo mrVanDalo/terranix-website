@@ -24,11 +24,11 @@ let
 
   hcloud_api_token = "`${pkgs.pass}/bin/pass development/hetzner.com/api-token`";
 
-  terranix = pkgs.callPackage (pkgs.fetchgit{
+  terranix = pkgs.callPackage (pkgs.fetchgit {
     url = "https://github.com/mrVanDalo/terranix.git";
-    rev = "dfbf4d1fae08da8052ff880c5d02b2eb5857d54c";
-    sha256 = "1qilbvldlq7ybxa3yx99hb8vbmj0sk5x9qqxa4f1czpzj2mja0fn";
-  }) {};
+    rev = "2.2.3";
+    sha256 = "0r7n0c1m81rz22x2bc3kkw63xs3cf8jbfpr73vplnc3yyngkrjxp";
+  }) { };
 
   terraform = pkgs.writers.writeBashBin "terraform" ''
     export TF_VAR_hcloud_api_token=${hcloud_api_token}
