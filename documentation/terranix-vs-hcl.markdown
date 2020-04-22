@@ -35,10 +35,10 @@ resource."aws_instance"."web" = {
 
 ## references
 
-In **HCL** you can only reference variables outputs. 
+In **HCL** you can only reference variable outputs. 
 But in terranix, because it is nix, you can basically reference everything.
 
-For example have a resource and want to reuse the parameters:
+For example if you have a resource and you want to reuse its parameters:
 ```nix
 resoure.hcloud_server.myserver = {
   name = "node1";
@@ -47,7 +47,9 @@ resoure.hcloud_server.myserver = {
 };
 ```
 
-You can reference parameters the terraform way:
+You can reference parameters the terraform way,
+because they are 
+[resource outputs](https://www.terraform.io/docs/providers/hcloud/r/server.html):
 
 ```nix
 resoure.hcloud_server.myotherserver = {
@@ -76,7 +78,7 @@ resoure.hcloud_server.myotherotherotherserver = {
 };
 ```
 
-The difference is that terranix and terraform references are evaluated differently.
+> The difference is that terranix and terraform references are evaluated differently.
 terranix references are evaluated when generating the json file, and terraform references are calculated
 during the process.
 
@@ -112,21 +114,21 @@ variable.multiline.description = ''
 The form `${expression}` is used by terranix and terraform.
 So if you want to use a terraform expression in terranix,
 you have to escape it.
-There are the two context, multi and singe line strings.
+Escaping differs for multi and singe line strings.
 
 ### escaping in single line strings
 
-In a single line strings, you escape the via `\${expression}`.
+In a single line strings, you escape via `\${expression}`.
 For example :
 
 ```nix
 variable.hcloud_token = {};
-provider.hcloud.token = "\${var.hcloud_token}";
+provider.hcloud.token = "\${ var.hcloud_token }";
 ```
 
 ### escaping in multi line strings
 
-In multi line strings, you escape the via `''${expression}`.
+In multi line strings, you escape via `''${expression}`.
 For example :
 
 ```nix

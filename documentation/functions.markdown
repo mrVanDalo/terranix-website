@@ -14,9 +14,9 @@ Useful to create a resource depending on a condition.
 The following example adds a bation host only if
 the variable `bastionHostEnable` is set to true.
 
-This is just an example for illustration and such things
+This is just an example for illustration, such things
 are better solved using
-[modules](/documentation/modules/).
+[modules](/modules/).
 
 ```nix
 { lib, ... }:

@@ -2,33 +2,36 @@
 title: terranix.org
 ---
 
-A NixOS way to create [terraform json](https://www.terraform.io/docs/configuration/syntax-json.html) files.
+A NixOS way to create
+[terraform json](https://www.terraform.io/docs/configuration/syntax-json.html)
+files.
 
 ## Features
 
 * Using terranix is very similar to use terraform, you can use the
-  [terraform reference material](https://www.terraform.io/docs/providers/index.html) without much hassle.
+  [terraform reference material](https://www.terraform.io/docs/providers/index.html)
+  without much hassle.
 * The full power of the nix language (map, filter, reduce, ... )
 * The full power of the module system of NixOS
 * The full power of all the tooling in `pkgs` of NixOS (fetchgit,fetchurl,writers, ...)
-* Documentation generation out of a `config.nix` as json or man page.
+* Documentation generation from `config.nix` as json or man page.
 
 # What is Terraform?
 
-Terraform a tool to interact with APIs via declarative files.
+Terraform is a tool to interact with APIs via declarative files.
 Instead of write imperative scripts, you
 define the setup you like to have and terraform will make it happen.
 
 ## What is config.tf.json?
 
 `config.tf.json` or `config.tf` is the file that contains the
-setup you which to realize behind one or multiple APIs.
+setup descriptions to be realized behind one or multiple APIs.
 The majority of your work will be to create theses files.
 
 ## What are Providers?
 
-Providers are the *thing* that enables terraform to talk to APIs.
-There is a huge list of providers available on 
+Providers are the **thing** that enables terraform to talk to APIs.
+A huge list of providers is available on 
 [the Terraform website](https://www.terraform.io/docs/providers/index.html).
 
 ## What is Terraform State?
@@ -36,10 +39,10 @@ There is a huge list of providers available on
 Terraform is not capable of seeing the state behind APIs,
 because APIs never share all information.
 This is why terraform creates a state file
-on every run to provide information for the next runs.
+on every run to provide information for the next run.
 
-It is not always clear what ends up in this state file,
-and is the reason why secrets have to be handled with care!
+> It is not always clear what ends up in this state file, 
+> so handle secrets always with care!
 
 
 # What is terranix?
