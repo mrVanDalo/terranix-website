@@ -26,13 +26,13 @@ let
 
   terranix = pkgs.callPackage (pkgs.fetchgit {
     url = "https://github.com/mrVanDalo/terranix.git";
-    rev = "2.2.3";
-    sha256 = "0r7n0c1m81rz22x2bc3kkw63xs3cf8jbfpr73vplnc3yyngkrjxp";
+    rev = "2.3.0";
+    sha256 = "030067h3gjc02llaa7rx5iml0ikvw6szadm0nrss2sqzshsfimm4";
   }) { };
 
   terraform = pkgs.writers.writeBashBin "terraform" ''
     export TF_VAR_hcloud_api_token=${hcloud_api_token}
-    ${pkgs.terraform_0_11}/bin/terraform "$@"
+    ${pkgs.terraform_0_12}/bin/terraform "$@"
   '';
 
 in pkgs.mkShell {
